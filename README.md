@@ -1,86 +1,128 @@
-Instagram Clone - React.js
+<div align="center">
 
-📝 Giới thiệu
+# 📸 Instagram Clone
 
-Instagram Clone là một dự án giao diện người dùng được xây dựng bằng React.js. Dự án tái hiện các tính năng cơ bản của Instagram như hiển thị bài đăng, theo dõi người dùng, và các giao diện khác. Đây là một dự án lý tưởng cho những ai muốn học cách xây dựng ứng dụng web tương tác, làm quen với React.js và các công nghệ hiện đại trong phát triển giao diện người dùng.
+**Giao diện Instagram được xây dựng lại bằng React 19 & Material UI**
 
-Dự án này có thể được sử dụng để thực hành hoặc mở rộng thêm các tính năng phức tạp hơn như chat thời gian thực, thông báo đẩy, hoặc tích hợp backend với các cơ sở dữ liệu thực tế.
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white)
+![MUI](https://img.shields.io/badge/MUI-6-007FFF?style=flat-square&logo=mui&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 
-🌟 Tính năng chính
+</div>
 
-Hiển thị bài đăng và hình ảnh từ danh sách dữ liệu giả lập hoặc API thực tế.
+---
 
-Trang cá nhân người dùng với khả năng tùy chỉnh thông tin cơ bản.
+## 📝 Giới thiệu
 
-Chức năng theo dõi / bỏ theo dõi người dùng để xây dựng danh sách kết nối.
+Dự án tái hiện giao diện trang chủ (Home) của Instagram với bố cục 3 cột quen thuộc: **thanh điều hướng**, **bảng tin (feed) kèm story**, và **gợi ý theo dõi**. Đây là một dự án front-end thuần (static UI), phù hợp để luyện tập React, làm quen với hệ thống component và styling bằng Material UI.
 
-Thanh tìm kiếm linh hoạt để tìm kiếm người dùng hoặc bài đăng.
+> Dự án hiện tại tập trung vào phần giao diện hiển thị, dữ liệu bài đăng/story là dữ liệu mẫu (mock), chưa kết nối backend hay xử lý tương tác thực (like, comment, follow...).
 
-Giao diện đồng bộ và hiệu quả nhờ React.js, tối ưu trải nghiệm người dùng.
+## 🖼️ Giao diện
 
-Hỗ trợ responsive trên nhiều kích thước màn hình.
+Bố cục chia 3 phần chính trên màn hình desktop:
 
-🔧 Công nghệ sử dụng
+| Cột trái | Cột giữa | Cột phải |
+|---|---|---|
+| Logo + menu điều hướng (Home, Search, Explore, Reel, Messages, Notification, Create, Profile, Thread, More) | Story ngang trên cùng + danh sách bài đăng (feed) | Thông tin tài khoản đang đăng nhập + danh sách gợi ý theo dõi |
 
-React.js: Thư viện JavaScript chính cho frontend, giúp xây dựng giao diện tương tác một cách nhanh chóng.
+## 🌟 Tính năng hiện có
 
-React Router: Quản lý đường dẫn và điều hướng giữa các trang.
+- **Story bar** — hiển thị danh sách story từ dữ liệu mẫu (`src/story.json`), render dạng vòng tròn cuộn ngang.
+- **Bảng tin (Feed)** — hiển thị bài đăng dạng card gồm ảnh, tên người đăng, số lượt thích, caption và số bình luận.
+- **Thanh điều hướng trái** — đầy đủ icon Material Icons cho các mục Home, Search, Explore, Reel, Messages, Notification, Create, Profile, Thread, More.
+- **Gợi ý theo dõi (cột phải)** — hiển thị tài khoản đang dùng và danh sách "Suggested For You" kèm nút Follow.
 
-CSS/SCSS: Cung cấp khả năng tùy chỉnh giao diện chi tiết và hiện đại.
+## 🔧 Công nghệ sử dụng
 
-Axios: Thư viện JavaScript giúp kết nối với backend qua API, thực hiện các yêu cầu HTTP dễ dàng.
+| Công nghệ | Vai trò |
+|---|---|
+| [React 19](https://react.dev/) | Thư viện chính dựng giao diện theo component |
+| [Create React App](https://create-react-app.dev/) (`react-scripts`) | Toolchain build & dev server |
+| [MUI (Material UI) v6](https://mui.com/) | Hệ thống icon (`@mui/icons-material`) và component UI |
+| [Emotion](https://emotion.sh/) (`@emotion/react`, `@emotion/styled`) | Engine styling phía dưới MUI |
+| CSS thuần (file `.css` riêng theo từng component) | Tuỳ biến layout, màu sắc, responsive |
 
-Font Awesome: Thư viện biểu tượng được sử dụng để làm giao diện sinh động hơn.
+> Repo hiện **chưa sử dụng** React Router hay Axios — toàn bộ dữ liệu hiện tại là tĩnh/mock, chưa có điều hướng nhiều trang hay gọi API thực.
 
-🚀 Cách chạy dự án
+## 🚀 Cách chạy dự án
 
-Yêu cầu:
+### Yêu cầu
 
-Cài đặt Node.js và npm/yarn.
+- [Node.js](https://nodejs.org/) (khuyến nghị bản LTS ≥ 18)
+- npm (đi kèm Node.js) hoặc yarn
 
-Các bước:
+### Các bước
 
-Clone dự án:
+```bash
+# 1. Clone dự án
+git clone https://github.com/vohuynhdatpy/instagram-clone.git
+cd instagram-clone
 
-git clone <repository-url>
-cd <repository-folder>
-
-Cài đặt các gói phụ thuộc:
-
+# 2. Cài đặt dependencies
 npm install
 
-Chạy dự án:
-
+# 3. Chạy ở môi trường development
 npm start
+```
 
-Mở trình duyệt và truy cập:
-http://localhost:3000
+Mở trình duyệt tại [http://localhost:3000](http://localhost:3000) để xem kết quả. Trang sẽ tự tải lại mỗi khi bạn lưu thay đổi.
 
-📂 Cấu trúc thư mục
+### Các script khác
 
+```bash
+npm test       # Chạy test runner ở chế độ watch
+npm run build  # Build bản production vào thư mục build/
+```
+
+## 📂 Cấu trúc thư mục
+
+```
 instagram-clone/
-|
-├── public/             # Tài nguyên tĩnh
-├── src/                # Mã nguồn chính
-│   ├── components/     # Các component React
-│   ├── pages/          # Các trang giao diện
-│   ├── App.js          # File chính của React
-│   ├── index.js        # Khởi chạy dự án
-│   └── styles/         # File CSS hoặc SCSS
-|
-├── .env                # Biến môi trường (nếu có)
-├── package.json        # File quản lý các dependencies
-└── README.md           # Tệp hướng dẫn
+├── public/                  # File tĩnh & ảnh demo (img1–img5.jpg, favicon, manifest...)
+├── src/
+│   ├── assets/               # Logo & ảnh profile dùng trong UI
+│   │   ├── logo.png
+│   │   └── profile.jpg
+│   ├── Component/
+│   │   ├── leftSide.js        # Thanh điều hướng bên trái
+│   │   ├── leftSide.css
+│   │   ├── middleSide.js      # Story bar + danh sách bài đăng
+│   │   ├── middleSide.css
+│   │   ├── rightSide.js       # Thông tin tài khoản + gợi ý theo dõi
+│   │   ├── rightSide.css
+│   │   └── Post/
+│   │       └── post.js        # Component 1 bài đăng (post card)
+│   ├── story.json            # Dữ liệu mẫu cho story bar
+│   ├── App.js                # Ghép layout 3 cột (Left / Middle / Right)
+│   ├── App.css
+│   ├── index.js              # Điểm khởi chạy ứng dụng React
+│   └── index.css
+├── package.json
+└── README.md
+```
 
-📚 Hướng dẫn phát triển thêm
+## 📚 Hướng phát triển tiếp theo
 
-Thêm tính năng mới: Có thể mở rộng dự án với các tính năng nâng cao như bình luận bài đăng, hệ thống thông báo, hoặc tải lên hình ảnh.
+Một số gợi ý để mở rộng dự án xa hơn mức demo UI hiện tại:
 
-Tích hợp backend: Sử dụng các công nghệ như Node.js, Express.js, hoặc Firebase để lưu trữ dữ liệu thực tế.
+- [ ] Kết nối dữ liệu bài đăng/story qua API thực (REST hoặc Firebase) thay cho dữ liệu mẫu cố định.
+- [ ] Thêm `react-router-dom` để hỗ trợ điều hướng nhiều trang (Profile, Explore, Messages...).
+- [ ] Thêm state quản lý like/comment/follow (Context API hoặc Redux/Zustand).
+- [ ] Responsive đầy đủ cho mobile (hiện đã có khung `mobileTopBar` ở cột giữa, có thể mở rộng thêm).
+- [ ] Tích hợp backend (Node.js/Express hoặc Firebase) để lưu trữ dữ liệu người dùng thực.
+- [ ] Triển khai lên Vercel hoặc Netlify để chia sẻ bản demo trực tuyến.
 
-Triển khai ứng dụng: Đưa ứng dụng lên các nền tảng như Vercel, Netlify hoặc Heroku để chia sẻ với bạn bè.
+## 👤 Tác giả
 
-#Contact
-email:vhuyndat@gmail.com
+**Võ Huỳnh Đạt**
+📧 vhuyndat08@gmail.com
+🔗 [github.com/vohuynhdatpy](https://github.com/vohuynhdatpy)
 
+---
 
+<div align="center">
+
+Nếu thấy dự án hữu ích, hãy cho một ⭐ trên GitHub nhé!
+
+</div>
